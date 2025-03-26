@@ -8,21 +8,19 @@
 
 const botonReestablecer = document.getElementById('btnReestablecer'); //para reiniciar el contador a cero.
 const contadorVisitas = document.getElementById('contadorVisitas');
-
-localStorage.setItem('contador', '5');
+let visita = localStorage.getItem('visita') || 0
 
 function actualizarContador() {
- let visitas = localStorage.getItem('contador');
+  visita++
+  console.log(visita);
+  contadorVisitas.innerText = visita;
+}
+  actualizarContador();
+localStorage.setItem('visita', visita)
 
-   visitas = +visitas + 1;
-   localStorage.getItem('contador', visitas);
-   contadorVisitas.innerText = visitas;
-
-   actualizarContador(7);
-
-
-
-  //botonReestablecer.addEventListener('clik', () => {
+ /* .addEventListener('')
+  botonReestablecer.addEventListener('clik', () => {
 }
 
 
+*/
